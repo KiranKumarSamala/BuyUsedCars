@@ -1,10 +1,10 @@
 # Buy Used Cars
 
-This Application is created to display the User car details with the following functionality
+This Application is created to handle used cars with the following functionality
 
 ```shell
 1. View list of all the available used cars 
-2. select a car to view the warehouse details and more information about the car
+2. View the warehouse details and more information about the selected car
 ```
 
 
