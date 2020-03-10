@@ -1,0 +1,41 @@
+<div>
+    <div class="row ">
+        <div class="col-lg-3 col-xs-12 col-sm-6 mt-1"  *ngFor="let vehicle of vehiclesData">
+            <div class="card" [ngClass]="vehicle.licensed ? 'card-clickable' : 'card-not-clickable' ">
+                <span style="text-align: right; padding-top: 10px; padding-right: 10px; min-height: 35px;">
+                    <i class="far fa-check-circle" *ngIf="vehicle.licensed" ></i>
+                </span>
+                <div class="row p-2">
+                    <span class="col-12" style="text-align: center; "> 
+                        <img src="../../assets/images/simple-car.png"   style="height: 150px; width:150px; ">
+                    </span>
+                    <span class="col-12" >
+                        <span class="row">
+                            <h5 class="col-6">Make </h5>
+                            <label class="col-6">{{vehicle.make}}</label>
+                        </span>
+                        <span class="row">
+                            <h5 class="col-6">Model </h5>
+                            <label class="col-6">{{vehicle.model}} </label>
+                        </span>
+                        <span class="row">
+                            <h5 class="col-6">Year Model </h5>
+                            <label class="col-6">{{vehicle.yearModel}} </label>
+                        </span>
+                        <span class="row">
+                            <h5 class="col-6">Licensed </h5>
+                            <label class="col-6">{{vehicle.licensed ? 'Yes' : 'No'}} </label>
+                        </span>
+                        <span class="row">
+                            <h5 class="col-6">Price </h5>
+                            <label class="col-6">
+                                <i class="fas fa-euro-sign"></i> 
+                                {{vehicle.price}}
+                            </label>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
