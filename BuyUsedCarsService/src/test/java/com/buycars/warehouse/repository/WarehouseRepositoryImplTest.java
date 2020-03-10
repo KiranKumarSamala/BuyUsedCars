@@ -88,4 +88,21 @@ class WarehouseRepositoryImplTest {
 		assertTrue(warehouseList.size() == 2);
 	}
 
+	@Test
+	void testFindWarehouseByVehicle() {
+		
+		Warehouse w1 = warehouseRepositoryImpl.findWarehouseByVehicle(4L);
+		
+		assertTrue(w1.getName().equals("Warehouse B"));
+		assertTrue( w1.getLocation().getLatitude().equals("15.95386"));
+		assertTrue( w1.getLocation().getLongitude().equals("7.06246"));
+		
+		assertTrue( w1.getCars().getLocationName().equals("East wing"));
+		
+		List<Vehicle> vehicle = w1.getCars().getVehicles();
+		assertTrue(vehicle.size() == 2);
+		
+		assertTrue(vehicle.get(1).getId() == 4);
+
+	}
 }

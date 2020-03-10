@@ -13,4 +13,9 @@ public interface WarehouseService {
 	 */
 	public List<Vehicle> findAll();
 
+	/*
+	 * This method is used to find the warehouse details of vehicle
+	 * by vehicle id
+	 */
+	public Warehouse findWarehouseByVehicle(Long vehicleId);
 }

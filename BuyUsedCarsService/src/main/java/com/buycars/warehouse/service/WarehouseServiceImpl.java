@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.buycars.warehouse.entities.Vehicle;
+import com.buycars.warehouse.entities.Warehouse;
 import com.buycars.warehouse.repository.WarehouseRepositoryImpl;
 
 @Service
@@ -36,4 +37,15 @@ public class WarehouseServiceImpl implements WarehouseService {
 		return vehicle1Date.compareTo(vehicle2Date);
 	}
 
+	@Override
+	public Warehouse findWarehouseByVehicle(Long vehicleId) {
+		Warehouse warehouse = warehouseRepository.findWarehouseByVehicle(vehicleId);
+		List<Vehicle> vehicle = warehouse.getCars().getVehicles().stream()
+				.filter(v -> v.getId().equals(vehicleId))
+				.collect(Collectors.toList());
+		warehouse.getCars().setVehicles(vehicle);
+		 
+
+		return warehouse;
+	}
 }
