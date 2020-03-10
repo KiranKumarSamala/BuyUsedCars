@@ -1,0 +1,42 @@
+<div class="card" *ngIf="vehicleWarehouse">
+    <div class="row p-2" >
+        <span class="col-xs-12 col-sm-12 col-md-6" style="text-align: center;"> 
+            <i class="fas fa-chevron-left pr-2" (click)="moveLeft()" [ngClass]=" enableLeftArrow ? 'arrowPointer': 'disableArrows'  " ></i>
+            <img [src]="imagesList[index]"   style="height: 300px; width:600px; ">
+            <i class="fas fa-chevron-right pr-2" (click)="moveRight()" [ngClass]=" enableRightArrow ? 'arrowPointer': 'disableArrows' "></i>
+        </span>
+        <span class="col-xs-12 col-sm-12 col-md-6 pt-4" >
+            <span class="row">
+                <h5 class="col-6">Warehouse </h5>
+                <label class="col-6">{{vehicleWarehouse.name}}</label>
+            </span>
+            <span class="row">
+                <h5 class="col-6">Location </h5>
+                <label class="col-6">{{vehicleWarehouse.cars.locationName}} </label>
+            </span>
+            <span class="row">
+                <h5 class="col-6">Make </h5>
+                <label class="col-6">{{vehicleWarehouse.cars.vehicles[0].make}}</label>
+            </span>
+            <span class="row">
+                <h5 class="col-6">Model </h5>
+                <label class="col-6">{{vehicleWarehouse.cars.vehicles[0].model}} </label>
+            </span>
+            <span class="row">
+                <h5 class="col-6">Year Model </h5>
+                <label class="col-6">{{vehicleWarehouse.cars.vehicles[0].yearModel}} </label>
+            </span>
+            <span class="row">
+                <h5 class="col-6">Licensed </h5>
+                <label class="col-6">{{vehicleWarehouse.cars.vehicles[0].licensed ? 'Yes' : 'No'}} </label>
+            </span>
+            <span class="row">
+                <h5 class="col-6">Price </h5>
+                <label class="col-6">
+                    <i class="fas fa-euro-sign"> </i>
+                    {{vehicleWarehouse.cars.vehicles[0].price}}
+                </label>
+            </span>
+        </span>
+    </div>
+</div>

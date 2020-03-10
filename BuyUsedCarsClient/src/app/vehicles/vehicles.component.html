@@ -5,7 +5,7 @@
                 <span style="text-align: right; padding-top: 10px; padding-right: 10px; min-height: 35px;">
                     <i class="far fa-check-circle" *ngIf="vehicle.licensed" ></i>
                 </span>
-                <div class="row p-2">
+                <div class="row p-2" [routerLink]="['/vehicle-details' , vehicle.id]">
                     <span class="col-12" style="text-align: center; "> 
                         <img src="../../assets/images/simple-car.png"   style="height: 150px; width:150px; ">
                     </span>
