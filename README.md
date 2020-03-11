@@ -9,3 +9,7 @@ This Application is created to handle used cars with the following functionality
 
 
 Sample data is available at @sample_data.json
+
+## Upcoming enhancements
+1. Shopping cart
+2. Using Redux to handle the shopping cart
